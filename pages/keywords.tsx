@@ -1,12 +1,35 @@
 import AppLayout from "../components/AppLayout";
-import Keywords from "@/components/Keywords";
+import KeywordsComponent from "../components/Keywords";
+
+import { PrismaClient } from '@prisma/client'
+const prisma = new PrismaClient()
 
 
-export default function GetStarted() {
+export async function getServerSideProps() {
+    // get the most recent business in db
+    const buisnesses = await prisma.buisness.findFirst(
+        {
+            orderBy: {
+                buisnessId: 'desc'
+            }
+        })
+    
+    return {
+        props: {
+            buisnesses: buisnesses?.buisnessId
+        }
+    }
+}
+
+interface KeywordsProps {
+    buisnesses: string;
+}
+
+export default function Keywords({buisnesses}: KeywordsProps)  {
     return (
         <>
             <AppLayout>
-                <Keywords/>
+                <KeywordsComponent buisnessId = {buisnesses}/>
             </AppLayout>
         </>
     )

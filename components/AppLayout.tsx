@@ -3,9 +3,8 @@ import { Dialog, Transition } from '@headlessui/react'
 import {
     Bars3Icon,
     CalendarIcon,
-    ChartPieIcon,
-    DocumentDuplicateIcon,
-    FolderIcon,
+    PhotoIcon,
+    ClipboardDocumentIcon,
     HomeIcon,
     UsersIcon,
     XMarkIcon,
@@ -21,9 +20,8 @@ import Link from 'next/link'
 const navigation = [
     { name: 'Dashboard', href: '#', icon: HomeIcon, current: false },
     { name: 'Copy', href: '#', icon: UsersIcon, current: false },
-    { name: 'Ads', href: '#', icon: FolderIcon, current: false },
-    { name: 'Images', href: '#', icon: CalendarIcon, current: false },
-    { name: 'Copy', href: '#', icon: DocumentDuplicateIcon, current: false },
+    { name: 'Ads', href: '#', icon: ClipboardDocumentIcon, current: false },
+    { name: 'Images', href: '#', icon: PhotoIcon, current: false },
 ]
 
 

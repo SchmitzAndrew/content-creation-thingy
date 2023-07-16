@@ -6,7 +6,7 @@ import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
 export default function Buisness() {
     return (
         <>
-            <form>
+            <form action="/api/addBuisness" method="POST">
                 <div className="space-y-12">
                     <div className="grid grid-cols-1 gap-x-8 gap-y-10 border-b border-gray-900/10 pb-12 md:grid-cols-3">
                         <div>
@@ -17,36 +17,35 @@ export default function Buisness() {
                         </div>
                         <div className="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 md:col-span-2">
                             <div className="sm:col-span-4">
-                                <label htmlFor="website" className="block text-sm font-medium leading-6 text-gray-900">
-                                    Website
+                                <label htmlFor="name" className="block text-sm font-medium leading-6 text-gray-900">
+                                    Name
                                 </label>
                                 <div className="mt-2">
                                     <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-sky-600 sm:max-w-md">
-                                        
                                         <input
                                             type="text"
-                                            name="website"
-                                            id="website"
+                                            name="name"
+                                            id="name"
                                             className="block flex-1 border-0 bg-transparent py-1.5 pl-2 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                                            placeholder="www.example.com"
+                                            placeholder="ACME Corporation"
                                         />
                                     </div>
                                 </div>
                             </div>
                             <div className="col-span-full">
-                                <label htmlFor="about" className="block text-sm font-medium leading-6 text-gray-900">
+                                <label htmlFor="description" className="block text-sm font-medium leading-6 text-gray-900">
                                     Description
                                 </label>
                                 <div className="mt-2">
                                     <textarea
-                                        id="about"
-                                        name="about"
+                                        id="description"
+                                        name="description"
                                         rows={3}
                                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
                                         defaultValue={''}
                                     />
                                 </div>
-                                <p className="mt-3 text-sm leading-6 text-gray-600">Write a few sentences about yourself.</p>
+                                <p className="mt-3 text-sm leading-6 text-gray-600">Write a few sentences about your buisness.</p>
                             </div>
                             <div className="sm:col-span-3">
                                 <label htmlFor="category" className="block text-sm font-medium leading-6 text-gray-900">
